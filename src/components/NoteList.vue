@@ -19,7 +19,7 @@
     <div class="container">
       <div class="list-group">
         <a href=# class="list-group-item" v-for="item in noteItems" @click="setActive(item)" :class="{active:activeNote === item}">
-          <h4 class="list-group-item-heading">{{item.text}}</h4>
+          <h4 class="list-group-item-heading">{{firstLine(item.text)}}</h4>
         </a>
       </div>
     </div>
@@ -55,6 +55,10 @@
     methods:{
       setActive:function(item){
         this.$store.dispatch('action_setActiveNote',item);
+      },
+      firstLine:function(text) {
+        console.log('haha');
+        return text.trim().split('\n')[0];
       }
     }
     /*这个FIFA那个不用过滤器，是怎么保持标题就那么长的呢
@@ -103,6 +107,10 @@
   }
 
   .list-group-item-heading{
+    overflow: hidden;
+    white-space: nowrap;
+    margin:0;
+    line-height: 21px;
     font-weight:300;
     font-size:15px;
     min-height:21px;

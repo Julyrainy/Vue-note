@@ -1,6 +1,6 @@
 <template>
-  <div id="note-editor">
-    <textarea :value="noteContent" @input="noteChange" class="form-control"></textarea><!-- form-control，可以使得表单宽度占满-->
+  <div id="note-editor" v-show='noteContent'>
+    <textarea :value="noteContent" @input="noteChange" class="form-control editorarea"></textarea><!-- form-control，可以使得表单宽度占满-->
   </div>
 </template>
 
@@ -22,6 +22,7 @@
 <style type="text/css">
   #note-editor{
     margin-left:380px;
+    padding-left: 20px;
     height:100%;
   }
 
@@ -29,5 +30,12 @@
     height:100%;
     border:0;
     border-radius: 0;
+    box-shadow: 0 0 ;
+    font-size:20px;
+  }
+  .editorarea::first-line{
+    font-size:24px;
+    font-weight:bold;
+    line-height: 48px;
   }
 </style>
