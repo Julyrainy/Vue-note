@@ -1,6 +1,6 @@
-# note
+# Vue-note
 
-> A Vue.js project
+> 基于Vue实现的一款简单的网页笔记本
 
 ## Build Setup
 
